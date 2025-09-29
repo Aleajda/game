@@ -5,14 +5,14 @@ typedef enum { PLAYER_USER, PLAYER_COMP } PlayerType;
 
 typedef struct {
     PlayerType type;
-    char color; // 'W' or 'B'
+    char color;
 } Player;
 
 typedef struct {
     int N;
-    char *cells; // '.' W B
+    char *cells;
     Player p1, p2;
-    int cur; // 1 или 2 – чей ход
+    int cur;
     int started;
     int moves_count;
 } Game;
@@ -29,7 +29,6 @@ void game_switch_turn(Game *g);
 int game_board_full(Game *g);
 int game_check_winner(Game *g, char *out_color);
 
-// Ход компьютера
 void game_comp_move(Game *g, int *outx, int *outy);
 
 #endif
