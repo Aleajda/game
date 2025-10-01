@@ -13,11 +13,11 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // разрешаем все пути
-                        .allowedOrigins("http://localhost:5175") // адрес твоего фронта
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:5175")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(true); // если используешь cookie / авторизацию
+                        .allowCredentials(true);
             }
         };
     }
