@@ -4,6 +4,7 @@ package com.example.game.controller;
 import com.example.game.dto.RequestDto;
 import com.example.game.dto.ResponseDto;
 import com.example.game.service.GameService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ public class GameController {
     }
 
     @PostMapping("/nextMove")
-    public ResponseDto nextMove(@RequestBody RequestDto request) {
+    public ResponseDto nextMove(@Valid @RequestBody RequestDto request) {
         char nextPlayerColor = request.getNextPlayerColor().charAt(0);
         return gameService.computeNextMove(request.getSize(), request.getData(), nextPlayerColor);
     }

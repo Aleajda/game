@@ -4,12 +4,14 @@ import com.example.game.core.Game;
 import com.example.game.core.Player;
 import com.example.game.core.PlayerType;
 import com.example.game.dto.ResponseDto;
+import com.example.game.exception.InvalidGameDataException;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GameService {
 
     public ResponseDto computeNextMove(int size, String data, char nextPlayerColor) {
+        if (data.length() != Math.pow(size, 2)) throw new InvalidGameDataException("Size or data is incorrect");
         Game game = new Game();
 
         Player p1 = new Player(PlayerType.COMP, 'B');
