@@ -93,7 +93,7 @@ const Game: React.FC = () => {
 
     if (!boardSize) {
         return (
-            <div className="flex flex-col items-center p-4 w-dvw h-dvh bg-blue-200">
+            <div className="flex flex-col items-center p-4">
                 <h2 className="text-xl font-semibold mb-2">Игра в квадраты</h2>
 
                 <input
@@ -138,7 +138,7 @@ const Game: React.FC = () => {
     }
 
     return (
-        <div className="flex flex-col items-center p-4 h-dvh w-dvw bg-blue-200">
+        <div className="flex flex-col items-center p-4 min-h-screen w-full bg-blue-200">
             <h2 className="text-xl font-semibold mb-4">Игра в квадраты</h2>
 
             {winner && (
@@ -166,6 +166,7 @@ const Game: React.FC = () => {
                     const col = index % boardSize;
                     return (
                         <Cell
+                            key={index}
                             value={cell}
                             row={row}
                             col={col}
@@ -189,6 +190,7 @@ const Game: React.FC = () => {
             </button>
         </div>
     );
+
 };
 
 export default Game;
