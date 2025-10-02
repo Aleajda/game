@@ -4,17 +4,17 @@
 typedef enum { PLAYER_USER, PLAYER_COMP } PlayerType;
 
 typedef struct {
-    PlayerType type;
-    char color;
+  PlayerType type;
+  char color;
 } Player;
 
 typedef struct {
-    int N;
-    char *cells;
-    Player p1, p2;
-    int cur;
-    int started;
-    int moves_count;
+  int N;
+  char *cells;
+  Player p1, p2;
+  int cur;
+  int started;
+  int moves_count;
 } Game;
 
 void game_init(Game *g);

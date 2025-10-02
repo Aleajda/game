@@ -4,13 +4,13 @@
 #include <time.h>
 
 int main(void) {
-    srand((unsigned)time(NULL));
+  srand((unsigned)time(NULL));
 
-    Game game;
-    game_init(&game);
+  Game game;
+  game_init(&game);
 
-    io_run(&game);
+  io_run(&game);
 
-    game_free(&game);
-    return 0;
+  game_free(&game);
+  return 0;
 }
